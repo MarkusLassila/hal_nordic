@@ -70,11 +70,11 @@ typedef struct
 } nrf_ctrlap_info_t;
 
 /** @brief CTRLAP secure domain boot mode. */
-typedef enum
-{
-    NRF_CTRLAP_MODE_NORMAL        = CTRLAPPERI_MAILBOX_BOOTMODE_MODE_Normal,       ///< Normal mode of operation.
-    NRF_CTRLAP_MODE_ROM_OPERATION = CTRLAPPERI_MAILBOX_BOOTMODE_MODE_ROMOperation, ///< ROM operation mode.
-} nrf_ctrlap_bootmode_t;
+// typedef enum
+// {
+//     NRF_CTRLAP_MODE_NORMAL        = CTRLAPPERI_MAILBOX_BOOTMODE_MODE_Normal,       ///< Normal mode of operation.
+//     NRF_CTRLAP_MODE_ROM_OPERATION = CTRLAPPERI_MAILBOX_BOOTMODE_MODE_ROMOperation, ///< ROM operation mode.
+// } nrf_ctrlap_bootmode_t;
 
 /**
  * @brief Function for clearing the specified CTRLAP event.
@@ -211,8 +211,8 @@ NRF_STATIC_INLINE bool nrf_ctrlap_mailbox_txstatus_pending_check(NRF_CTRLAPPERI_
  *
  * @return Boot mode.
  */
-NRF_STATIC_INLINE nrf_ctrlap_bootmode_t
-nrf_ctrlap_mailbox_bootmode_get(NRF_CTRLAPPERI_Type const * p_reg);
+// NRF_STATIC_INLINE nrf_ctrlap_bootmode_t
+// nrf_ctrlap_mailbox_bootmode_get(NRF_CTRLAPPERI_Type const * p_reg);
 
 /**
  * @brief Function for setting the CTRLAP device information.
@@ -299,27 +299,27 @@ NRF_STATIC_INLINE bool nrf_ctrlap_mailbox_txstatus_pending_check(NRF_CTRLAPPERI_
     return (bool)p_reg->MAILBOX.TXSTATUS;
 }
 
-NRF_STATIC_INLINE nrf_ctrlap_bootmode_t
-nrf_ctrlap_mailbox_bootmode_get(NRF_CTRLAPPERI_Type const * p_reg)
-{
-    return (nrf_ctrlap_bootmode_t)p_reg->MAILBOX.BOOTMODE;
-}
+// NRF_STATIC_INLINE nrf_ctrlap_bootmode_t
+// nrf_ctrlap_mailbox_bootmode_get(NRF_CTRLAPPERI_Type const * p_reg)
+// {
+//     return (nrf_ctrlap_bootmode_t)p_reg->MAILBOX.BOOTMODE;
+// }
 
-NRF_STATIC_INLINE void nrf_ctrlap_info_set(NRF_CTRLAPPERI_Type *     p_reg,
-                                           nrf_ctrlap_info_t const * p_data)
-{
-    p_reg->INFO.PARTNO     = p_data->partno;
-    p_reg->INFO.HWREVISION = p_data->hw_revision;
-    p_reg->INFO.READY      = !p_data->ready;
-}
+// NRF_STATIC_INLINE void nrf_ctrlap_info_set(NRF_CTRLAPPERI_Type *     p_reg,
+//                                            nrf_ctrlap_info_t const * p_data)
+// {
+//     p_reg->INFO.PARTNO     = p_data->partno;
+//     p_reg->INFO.HWREVISION = p_data->hw_revision;
+//     p_reg->INFO.READY      = !p_data->ready;
+// }
 
-NRF_STATIC_INLINE void nrf_ctrlap_info_get(NRF_CTRLAPPERI_Type const * p_reg,
-                                           nrf_ctrlap_info_t *         p_data)
-{
-    p_data->partno      = p_reg->INFO.PARTNO;
-    p_data->hw_revision = p_reg->INFO.HWREVISION;
-    p_data->ready       = !p_reg->INFO.READY;
-}
+// NRF_STATIC_INLINE void nrf_ctrlap_info_get(NRF_CTRLAPPERI_Type const * p_reg,
+//                                            nrf_ctrlap_info_t *         p_data)
+// {
+//     p_data->partno      = p_reg->INFO.PARTNO;
+//     p_data->hw_revision = p_reg->INFO.HWREVISION;
+//     p_data->ready       = !p_reg->INFO.READY;
+// }
 
 #endif // NRF_DECLARE_ONLY
 
